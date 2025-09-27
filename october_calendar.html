@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025년 10월 개천절 연휴 수업 캘린더</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #e9ecef;
+            margin: 20px;
+        }
+        
+        .day-header {
+            background: #495057;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .day {
+            background: white;
+            min-height: 140px;
+            padding: 10px;
+            position: relative;
+            border: 1px solid #dee2e6;
+        }
+        
+        .day-number {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .day-content {
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        
+        .normal-day {
+            background: #f8f9fa;
+        }
+        
+        .holiday {
+            background: #ffe6e6;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .class-day {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .extended-class {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .no-class {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .compensation-day {
+            background: #e1f5fe;
+            border-left: 4px solid #00bcd4;
+        }
+        
+        .class-info {
+            background: rgba(33, 150, 243, 0.1);
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin: 2px 0;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        
+        .holiday-info {
+            background: rgba(220, 53, 69, 0.1);
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin: 2px 0;
+            font-size: 10px;
+            font-weight: 500;
+            color: #dc3545;
+        }
+        
+        .extended-info {
+            background: rgba(255, 152, 0, 0.1);
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin: 2px 0;
+            font-size: 10px;
+            font-weight: 500;
+            color: #ff9800;
+        }
+        
+        .no-class-info {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin: 2px 0;
+            font-size: 10px;
+            font-weight: 500;
+            color: #4caf50;
+        }
+        
+        .compensation-info {
+            background: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin: 2px 0;
+            font-size: 10px;
+            font-weight: 500;
+            color: #00bcd4;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            margin: 20px;
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px;
+            font-size: 14px;
+        }
+        
+        .important-note h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .prev-month {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>2025년 10월 개천절 연휴 수업 운영 안내</h1>
+            <p>2025년 10월 3일(금) ~ 10월 9일(목) 연휴 기간 수업 일정</p>
+        </div>
+        
+        <div class="important-note">
+            <h3>중요 안내</h3>
+            <p><strong>9월 결석 없이 출석하고 숙제를 완료한 학생들은 추석 연휴 수업 참여하지 않아도 됩니다.</strong><br>
+            연간 캘린더 기준 중등 12회 / 고등 8회 수업 시수에는 지장이 없습니다.</p>
+        </div>
+        
+        <div class="calendar">
+            <div class="day-header">일</div>
+            <div class="day-header">월</div>
+            <div class="day-header">화</div>
+            <div class="day-header">수</div>
+            <div class="day-header">목</div>
+            <div class="day-header">금</div>
+            <div class="day-header">토</div>
+            
+            <!-- 9월 28일-30일 -->
+            <div class="day prev-month">
+                <div class="day-number">28</div>
+                <div class="day-content">9월</div>
+            </div>
+            
+            <div class="day prev-month">
+                <div class="day-number">29</div>
+                <div class="day-content">9월</div>
+            </div>
+            
+            <div class="day prev-month">
+                <div class="day-number">30</div>
+                <div class="day-content">9월</div>
+            </div>
+            
+            <!-- 10월 1일 수요일 -->
+            <div class="day normal-day">
+                <div class="day-number">1</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <!-- 10월 2일 목요일 -->
+            <div class="day normal-day">
+                <div class="day-number">2</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <!-- 10월 3일 금요일 - 개천절 -->
+            <div class="day class-day">
+                <div class="day-number">3</div>
+                <div class="class-info">개천절 (금)</div>
+                <div class="class-info">보충수업 (필수)</div>
+                <div class="day-content">• 결석생<br>• 9/29~10/2<br>숙제 미완료생</div>
+            </div>
+            
+            <!-- 10월 4일 토요일 -->
+            <div class="day no-class">
+                <div class="day-number">4</div>
+                <div class="no-class-info">수업 없음</div>
+            </div>
+            
+            <!-- 10월 5일 일요일 -->
+            <div class="day holiday">
+                <div class="day-number">5</div>
+                <div class="holiday-info">연휴</div>
+            </div>
+            
+            <!-- 10월 6일 월요일 -->
+            <div class="day holiday">
+                <div class="day-number">6</div>
+                <div class="holiday-info">연휴</div>
+            </div>
+            
+            <!-- 10월 7일 화요일 -->
+            <div class="day holiday">
+                <div class="day-number">7</div>
+                <div class="holiday-info">연휴</div>
+            </div>
+            
+            <!-- 10월 8일 수요일 - 대체휴일 -->
+            <div class="day extended-class">
+                <div class="day-number">8</div>
+                <div class="extended-info">대체휴일 (수)</div>
+                <div class="extended-info">2시간 연장수업</div>
+                <div class="day-content">• 주성고<br>• 화목금 중2,3<br>(일신여중 제외)</div>
+            </div>
+            
+            <!-- 10월 9일 목요일 - 한글날 -->
+            <div class="day extended-class">
+                <div class="day-number">9</div>
+                <div class="extended-info">한글날 (목)</div>
+                <div class="extended-info">2시간 연장수업</div>
+                <div class="day-content">• 상당고<br>• 화목금 중2,3<br>(일신여중 제외)</div>
+            </div>
+            
+            <!-- 10월 10일 금요일 - 혼합 운영일 -->
+            <div class="day compensation-day">
+                <div class="day-number">10</div>
+                <div class="compensation-info">혼합 운영일</div>
+                <div class="day-content">
+                    <div class="class-info" style="background: rgba(76, 175, 80, 0.1); color: #4caf50;">정상수업</div>
+                    • 모든 초등생<br>• 일신여중<br>• 결석생 보충<br>
+                    <div class="compensation-info">휴무 (보상)</div>
+                    • 화목금 중등생<br>(연장수업 참여자)
+                </div>
+            </div>
+            
+            <!-- 10월 11일 토요일 - 보충수업 시작 -->
+            <div class="day class-day">
+                <div class="day-number">11</div>
+                <div class="class-info">토요 보충 시작</div>
+                <div class="day-content">• 결석생<br>• 중등 내신대비</div>
+            </div>
+            
+            <!-- 10월 12일-17일 -->
+            <div class="day normal-day">
+                <div class="day-number">12</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">13</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">14</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">15</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">16</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">17</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <!-- 10월 18일 토요일 -->
+            <div class="day class-day">
+                <div class="day-number">18</div>
+                <div class="class-info">토요 보충</div>
+                <div class="day-content">• 결석생<br>• 고등생 전원<br>• 중등 내신대비</div>
+            </div>
+            
+            <!-- 10월 19일-24일 -->
+            <div class="day normal-day">
+                <div class="day-number">19</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">20</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">21</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">22</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">23</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <div class="day normal-day">
+                <div class="day-number">24</div>
+                <div class="day-content">정상수업</div>
+            </div>
+            
+            <!-- 10월 25일 토요일 -->
+            <div class="day class-day">
+                <div class="day-number">25</div>
+                <div class="class-info">토요 보충</div>
+                <div class="day-content">• 결석생<br>• 고등생 전원<br>• 중등 내신대비</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e3f2fd; border-left: 4px solid #2196f3;"></div>
+                <span>특별 수업</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fff3e0; border-left: 4px solid #ff9800;"></div>
+                <span>2시간 연장수업</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e1f5fe; border-left: 4px solid #00bcd4;"></div>
+                <span>화목금반 보상휴무</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffe6e6; border-left: 4px solid #dc3545;"></div>
+                <span>연휴</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e8f5e8; border-left: 4px solid #4caf50;"></div>
+                <span>수업 없음</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f8f9fa;"></div>
+                <span>일반 수업</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="color: #667eea;"><strong>개별 추가학습을 희망하는 학생의 경우, 휴무일에도 학습 공간을 제공할 수 있습니다.</strong></p>
+            <p><strong>비타민영어클리닉 학원</strong><br>Vitamin English Clinic</p>
+        </div>
+    </div>
+</body>
+</html>
